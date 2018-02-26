@@ -72,3 +72,16 @@ DB_Disk_Size_GB : Size of Data Disk, in GB.
 Log_Disk_Size_GB : Size of Logs Disk, in GB.
 
 DomainName : Domain which VMs will be joined to.
+
+## Work in Progress
+- Localization so that non-sysprepped images can be used.
+- Insertion of Best Practices.
+
+## Please feel free to let me know what other typical lifecycle actions should be included.
+
+# Disclaimer
+These blueprints are unofficial and are not supported or maintained by Nutanix in any way.
+
+In addition, please also be advised that these blueprints may deploy applications that do not follow best practices. Please check through each blueprint to ensure the configuration suits your requirements.
+
+Changes will be required before these application blueprints can be used in production environments. 
