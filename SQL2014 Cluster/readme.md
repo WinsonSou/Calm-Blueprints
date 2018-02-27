@@ -24,8 +24,8 @@ It follows the following steps:
 
 ## Requirements
 - Nutanix Data Services IP must be set for VMs to access Volume Groups.
-- **pre-sysprepped image** (VM which has Windows Server Installed, sysprepped and shutdown) must be used. Blueprint is tested with W2K16.
-- SQL2014 Installation Media has to be uploaded into the Nutanix Image Service.
+- **pre-sysprepped image** (VM which has Windows Server Installed, sysprepped and shutdown) must be used. VM Image should be loaded into Image Device 1 on each VM. Blueprint is tested with W2K16.
+- SQL2014 Installation Media has to be uploaded into the Nutanix Image Service. SQL 2014 ISO should be should be loaded into Image Device 2 on each VM.
 - AHV with IPAM Networks must be used.
 - Ensure that AHV IPAM Networks has DNS set to the Domain Controller, else VMs will not be able to join the domain during domain join task.
 - Ensure Karan VM is set up properly: [Nutanix KB](https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v10:nuc-installing-karan-service-t.html)
