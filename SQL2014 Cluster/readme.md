@@ -27,6 +27,14 @@ It follows the following steps:
 - **pre-sysprepped image** (VM which has Windows Server Installed, sysprepped and shutdown) must be used. Blueprint is tested with W2K16.
 - SQL2014 Installation Media has to be uploaded into the Nutanix Image Service.
 - AHV with IPAM Networks must be used.
+- Ensure that AHV IPAM Networks has DNS set to the Domain Controller, else VMs will not be able to join the domain during domain join task.
+- Ensure Karan VM is set up properly: https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v10:nuc-installing-karan-service-t.html
+- Ensure Karan VM is set up for Local Mode execution: https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v10:nuc-executing-karan-local-mode-t.html
+- Ensure Karan VM has CredSSP Setup: (Powershell Script to be run on Karan VM) `Enable-WSManCredSSP -Role "Client" -DelegateComputer "*"`
+- Ensure Karan VM has the following Group Policies Setup: 
+  - Gpedit.msc -> Computer Configuration -> Administrative Templates -> System -> Credentials Delegation -> `Allow Delegating Fresh Credentials & Allow Delegating Fresh Credentials with NTLM only server authentication (enable and add wsman/*)`
+  - Secpol.msc -> Security Settings\Local Policies\ User Rights Management\Adjust memory quotas for a process: `Add user or group (administrator)`
+  - Secpol.msc -> Security Settings\Local Policies\ User Rights Management\Adjust memory quotas for a process: Replace a process level token: `add user or group (administrator)`
 
 ## Credentials
 WINDOWS - Credential that will be used to login to VM Image on first boot.
